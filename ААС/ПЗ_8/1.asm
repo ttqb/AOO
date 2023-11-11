@@ -1,28 +1,24 @@
 %include 'io.inc'
 
 section .data
-    _even db `even`, 0
-    _odd db `odd`, 0
-
+    odd db "it's odd!",0
+    even db "it's even!",0
+section .bss
 section .text
 global CMAIN
-
 CMAIN:
-    mov ebp, esp
-    mov eax, 23
-    shr ax, 1
-    jc odd
-    jmp even
+    mov ax, 6  ;задаем число
+    shr ax, 1  ;сдвигаем на 1, если чет то cf = 0, иначе cf = 1
+    jc isodd   ;нечет если cf = 1
+    jmp iseven ;иначе чет
 
-even:
-    PRINT_STRING [_even]
-    jmp done
-
-odd:
-    PRINT_STRING [_odd]
-    jmp done
-    
-done:
-    mov eax, 1
-    xor ebx, ebx
+isodd:
+    PRINT_STRING[odd] ;выводим результат
+    jmp end           ;конец программы
+iseven:
+    PRINT_STRING[even];выводим результат
+    jmp end           ;конец программы
+end:
+    xor eax,eax
+    xor ebx,ebx
     ret
