@@ -1,22 +1,24 @@
-%include 'io.inc'
-section .data
-section .bss
-section .text
-global CMAIN
+%include 'io.inc' ; Включение файла 'io.inc'
+
+section .data ; Секция данных
+section .bss ; Секция неинициализированных данных
+section .text ; Секция текста
+global CMAIN ; Глобальная функция CMAIN
+
 CMAIN:
-    xor eax,eax
-    xor ebx,ebx
-    xor ecx,ecx
-    xor edx,edx
+    xor eax,eax ; Обнуление регистра eax
+    xor ebx,ebx ; Обнуление регистра ebx
+    xor ecx,ecx ; Обнуление регистра ecx
+    xor edx,edx ; Обнуление регистра edx
 loopa:
-    GET_CHAR eax
-    cmp eax,10
-    je end
-    PRINT_CHAR eax
-    PRINT_CHAR eax
-    jmp loopa
+    GET_CHAR eax ; Получение символа от пользователя
+    cmp eax,10 ; Сравнение символа с ASCII-кодом новой строки (10)
+    je end ; Если символ - новая строка, переход к метке 'end'
+    PRINT_CHAR eax ; Печать символа
+    PRINT_CHAR eax ; Печать символа ещё раз
+    jmp loopa ; Переход к метке 'loopa'
 
 end:
-    xor eax,eax
-    xor ebx,ebx
-    ret
+    xor eax,eax ; Обнуление регистра eax
+    xor ebx,ebx ; Обнуление регистра ebx
+    ret ; Возврат из функции
