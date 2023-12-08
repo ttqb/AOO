@@ -1,14 +1,14 @@
 %include 'io.inc'
 
 section .data
-    array dd 1,2,3,4,5,2,2,0,4,5,6,7 ; Массив данных
-    rows dd 4 ; Количество строк
+    array dd 1,2,3,4,5,0,2,2,6 ; Массив данных
+    rows dd 3 ; Количество строк
     rowsize dd 3 ; Размер строки
     min dd 4 ; Минимальное значение
     minrow dd 0 ; Строка с минимальным значением
 
 section .text
-global CMAIN
+    global CMAIN
 
 CMAIN:
     mov ebp, esp ; для корректной отладки
@@ -20,7 +20,7 @@ loopa:
     cmp ecx, [rows] ; Сравнение ecx с количеством строк
     je isend ; Если равны, переход к метке 'isend'
     cmp ebx, [rowsize] ; Сравнение ebx с размером строки
-    je  resetitemoffset ; Если равны, переход к метке 'resetitemoffset'
+    je resetitemoffset ; Если равны, переход к метке 'resetitemoffset'
     mov eax, [rowsize] ; Загрузка размера строки в eax
     imul ecx ; Умножение ecx на значение в eax
     add eax, ebx ; Добавление ebx к eax
@@ -67,6 +67,37 @@ swap:
     inc ebx ; Инкрементация ebx
     jmp swap ; Переход к метке 'swap'
 end:
+    mov eax, [rows]
+    mov ecx, 0
+    mov edx, [rowsize]
+newloopa:
+    cmp eax, [rows]
+    je not_print
+    PRINT_CHAR 10
+    cmp eax, 0
+    je newenda
+    dec eax
+    mov edx, [rowsize]
+newloopa1:
+    PRINT_DEC 4, [array + ecx]
+    add ecx, 4
+    dec edx
+    cmp edx, 0
+    je newloopa
+    jne newloopa1
+newenda:
     xor eax, eax ; Обнуление регистра eax
-    xor ebx, ebx ; Обнуление регистра ebx   
+    xor ebx, ebx ; Обнуление регистра ebx
     ret ; Возврат из функции
+not_print:
+    cmp eax, 0
+    je newenda
+    dec eax
+    mov edx, [rowsize]
+newloopa12:
+    PRINT_DEC 4, [array + ecx]
+    add ecx, 4
+    dec edx
+    cmp edx, 0
+    je newloopa
+    jne newloopa12
