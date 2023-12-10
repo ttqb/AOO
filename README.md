@@ -1,6 +1,10 @@
 <h1 align="center">
-  <a href="https://github.com/ttqb/AOO/releases/download/latest/AOO-master.zip">Скачать</a>
+  <a href="https://discord.gg/5hhvtacjAk"><img height=64 src="assets/discord-mark-blue.svg"/></a>
 </h1>
+
+<h2 align="center">
+  <a href="https://github.com/ttqb/AOO/releases/download/latest/AOO-master.zip">Скачать</a>
+</h2>
 
 ### ААС
 * [ПЗ_1](/ААС/ПЗ_1)
