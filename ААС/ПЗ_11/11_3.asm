@@ -26,5 +26,5 @@ cont:
     je end ; Если текущий символ - ноль, переход к метке 'end'
     jmp cont ; Переход к метке 'cont'
 end:
-    xor eax, eax ; Обнуление регистра eax
-    ret ; Возврат из функции
+    xor eax, eax
+    ret

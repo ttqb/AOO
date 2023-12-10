@@ -44,6 +44,6 @@ nfound:
     jmp end ; Переход к метке 'end'
 end:
     PRINT_DEC 4, eax ; Печать значения eax
-    xor eax, eax ; Обнуление регистра eax
-    xor ebx, ebx ; Обнуление регистра ebx
-    ret ; Возврат из функции
+    xor eax, eax
+    xor ebx, ebx
+    ret

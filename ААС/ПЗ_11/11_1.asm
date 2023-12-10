@@ -16,7 +16,6 @@ loopa:
     PRINT_CHAR eax ; Печать символа ещё раз
     jmp loopa ; Переход к метке 'loopa'
 end:
-    xor eax, eax ; Обнуление регистра eax
-    xor ebx, ebx ; Обнуление регистра ebx
-    GET_CHAR eax ; Получение символа от пользователя
-    ret ; Возврат из функции
+    xor eax, eax
+    xor ebx, ebx
+    ret

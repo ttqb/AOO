@@ -31,7 +31,7 @@ concat:
     jmp concat ; Переход к метке 'concat'
 print:
     PRINT_STRING[str1] ; Печать строки str1
-    xor eax, eax ; Обнуление регистра eax
-    xor ebx, ebx ; Обнуление регистра ebx
-    xor ecx, ecx ; Обнуление регистра ecx
-    ret ; Возврат из функции
+    xor eax, eax
+    xor ebx, ebx
+    xor ecx, ecx
+    ret
