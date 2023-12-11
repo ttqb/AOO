@@ -2,6 +2,11 @@
   <a href="https://discord.gg/5hhvtacjAk"><img height=64 src="assets/discord-mark-blue.svg"/></a>
 </h1>
 
+
+<h1 align="center">
+  На свой страх и риск - 11 ПЗ и 3-и задания 9, 10 ПЗ
+</h1>
+
 <h2 align="center">
   <a href="https://github.com/ttqb/AOO/releases/download/latest/AOO-master.zip">Скачать</a>
 </h2>
