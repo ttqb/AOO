@@ -1,9 +1,11 @@
+%include 'io.inc'
+
 section .data
     array db 1, 2, 3
 
 section .text
-global main
-main:
+global CMAIN
+CMAIN:
     mov ebp, esp
     mov esi, array
     mov al, array[0]

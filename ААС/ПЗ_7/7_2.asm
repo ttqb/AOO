@@ -1,6 +1,8 @@
+%include 'io.inc'
+
 section .text
-global main
-main:
+global CMAIN
+CMAIN:
     mov ebp, esp
     mov edi, 8
     mov esi, 5
