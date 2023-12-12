@@ -1,9 +1,4 @@
 <h1 align="center">
-  <a href="https://discord.gg/5hhvtacjAk"><img height=64 src="assets/discord-mark-blue.svg"/></a>
-</h1>
-
-
-<h1 align="center">
   На свой страх и риск - 11 ПЗ и 3-и задания 9, 10 ПЗ
 </h1>
 
